@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /uploads/
+
+# Демонстрационный проект. Перед публикацией замените домен в sitemap.xml.
+Sitemap: https://example.com/sitemap.xml

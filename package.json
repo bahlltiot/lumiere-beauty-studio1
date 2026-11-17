@@ -1,0 +1,15 @@
+{
+  "name": "lumiere-beauty-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LUMIÈRE — универсальный премиальный сайт-визитка студии красоты с онлайн-записью и админ-панелью",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node scripts/seed.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

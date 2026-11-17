@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Онлайн-запись — LUMIÈRE</title>
+  <meta name="description" content="Онлайн-запись в студию ресниц и бровей LUMIÈRE: выберите услугу, мастера, дату и удобное время.">
+  <meta name="theme-color" content="#F6F1EA">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap">
+  <script src="/js/theme-boot.js"></script>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="page-shell">
+    <div class="container">
+      <div class="page-head">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+          <span>Онлайн-запись</span>
+        </nav>
+        <h1 class="page-title">Запись <em>онлайн</em></h1>
+        <p class="page-sub">Четыре коротких шага — и время закреплено за вами. Запись подтвердит администратор, мы отправим уведомление на указанные контакты.</p>
+      </div>
+
+      <div class="booking-grid" data-booking-grid>
+        <div class="booking-panel">
+          <div class="stepper" aria-label="Шаги записи">
+            <div class="step is-active" data-step-indicator="1"><span class="step-num">1</span><span class="step-label">Услуга</span></div>
+            <div class="step" data-step-indicator="2"><span class="step-num">2</span><span class="step-label">Мастер</span></div>
+            <div class="step" data-step-indicator="3"><span class="step-num">3</span><span class="step-label">Дата и время</span></div>
+            <div class="step" data-step-indicator="4"><span class="step-num">4</span><span class="step-label">Контакты</span></div>
+          </div>
+
+          <section class="step-panel is-active" data-step-panel="1">
+            <h2 class="panel-title">Что будем делать?</h2>
+            <p class="panel-sub">Выберите процедуру — покажем стоимость, длительность и свободное время.</p>
+            <div class="choice-list" data-service-choices>
+              <div class="slots-empty">Загружаем услуги…</div>
+            </div>
+            <div class="booking-nav">
+              <span></span>
+              <button class="btn btn--accent" type="button" data-next="2" disabled>Выбрать мастера</button>
+            </div>
+          </section>
+
+          <section class="step-panel" data-step-panel="2">
+            <h2 class="panel-title">К кому записаться?</h2>
+            <p class="panel-sub">Все мастера работают с премиальными материалами. Выберите специалиста или оставьте выбор студии.</p>
+            <div class="master-grid" data-master-choices></div>
+            <div class="slots-empty" data-master-empty hidden>Пока нет мастера для этой услуги. Свяжитесь со студией — подберём время.</div>
+            <div class="booking-nav">
+              <button class="booking-back" type="button" data-back="1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12h-15M11 5.5 4.5 12l6.5 6.5"/></svg>
+                Назад
+              </button>
+              <button class="btn btn--accent" type="button" data-next="3" disabled>Выбрать время</button>
+            </div>
+          </section>
+
+          <section class="step-panel" data-step-panel="3">
+            <h2 class="panel-title">Когда вам удобно?</h2>
+            <p class="panel-sub" data-slots-sub>Свободные окна обновляются автоматически. Занятое время не показываем.</p>
+            <div class="date-strip" data-date-strip></div>
+            <button class="link-arrow" type="button" data-more-dates hidden style="margin-top:12px">Показать ещё дни</button>
+            <div class="slots-head">
+              <h4>Свободное время</h4>
+              <span data-slots-date></span>
+            </div>
+            <div class="slots-grid" data-slots></div>
+            <div class="slots-empty" data-slots-empty hidden></div>
+            <div class="booking-nav">
+              <button class="booking-back" type="button" data-back="2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12h-15M11 5.5 4.5 12l6.5 6.5"/></svg>
+                Назад
+              </button>
+              <button class="btn btn--accent" type="button" data-next="4" disabled>Продолжить</button>
+            </div>
+          </section>
+
+          <section class="step-panel" data-step-panel="4">
+            <h2 class="panel-title">Остались контакты</h2>
+            <p class="panel-sub">Проверьте детали и оставьте данные для связи. Это займёт меньше минуты.</p>
+            <div class="form-error" data-account-hint hidden></div>
+            <form data-booking-form novalidate>
+              <div class="form-error" data-form-error></div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="booking-name">Имя и фамилия</label>
+                  <input id="booking-name" name="name" autocomplete="name" placeholder="Анна Иванова" required>
+                </div>
+                <div class="field">
+                  <label for="booking-phone">Телефон</label>
+                  <input id="booking-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 (999) 000-00-00" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="booking-email">Email</label>
+                <input id="booking-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+              <div class="field">
+                <label for="booking-comment">Комментарий <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(необязательно)</span></label>
+                <textarea id="booking-comment" name="comment" placeholder="Пожелания, аллергии, вопросы к мастеру"></textarea>
+              </div>
+              <label class="checkline" style="margin-top:6px">
+                <input type="checkbox" name="consent" required>
+                <span>Согласен с <a href="/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a> и обработкой персональных данных</span>
+              </label>
+              <div class="booking-nav">
+                <button class="booking-back" type="button" data-back="3">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12h-15M11 5.5 4.5 12l6.5 6.5"/></svg>
+                  Назад
+                </button>
+                <button class="btn btn--accent" type="submit" data-booking-submit>Подтвердить запись</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <aside class="summary-card" data-summary>
+          <div class="summary-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.8h17M8 3.5v3M16 3.5v3"/></svg>
+            <p>Выберите услугу, мастера и время — здесь появятся детали записи.</p>
+          </div>
+        </aside>
+      </div>
+
+      <section data-booking-success hidden></section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/booking.js"></script>
+</body>
+</html>
